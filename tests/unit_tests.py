@@ -8,6 +8,8 @@ class checkWithdrawalUnitTests(unittest.TestCase):
   def test_refusal(self):
     result = checkWithdrawal(160, 90)
     self.assertFalse(result)
+  def test_error(self):
+    self.assertRaises(ValueError, checkWithdrawal, 0, -150)
 
 if __name__ == '__main__':
   unittest.main()
