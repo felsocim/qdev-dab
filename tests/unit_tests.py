@@ -10,6 +10,9 @@ class checkWithdrawalUnitTests(unittest.TestCase):
     self.assertFalse(result)
   def test_error(self):
     self.assertRaises(ValueError, checkWithdrawal, 0, -150)
+  def test_refusal2(self):
+    result = checkWithdrawal(600, 1200)
+    self.assertFalse(result)
 
 if __name__ == '__main__':
   unittest.main()
